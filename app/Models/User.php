@@ -23,6 +23,7 @@ class User extends Authenticatable
         'school_id',
         'email',
         'password',
+        'temporary_password',
         'role',
         'institution_id',
         'must_change_password'
@@ -105,5 +106,16 @@ class User extends Authenticatable
     public function issuedCredentials()
     {
         return $this->hasMany(Credential::class, 'issued_by');
+    }
+
+    /**
+     * Clear the temporary password when student changes their password.
+     */
+    public function clearTemporaryPassword()
+    {
+        $this->update([
+            'temporary_password' => null,
+            'must_change_password' => false,
+        ]);
     }
 }

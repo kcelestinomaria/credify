@@ -52,12 +52,12 @@
             </div>
         </section>
 
-        <!-- Who Uses Credify -->
+        <!-- Who Uses CredVerify -->
         <section class="py-16 bg-gray-50">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Who Uses Credify</h2>
-                    <p class="text-xl text-gray-600 mb-8">From diplomas to business licenses, Credify makes verification effortless.</p>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Who Uses CredVerify</h2>
+                    <p class="text-xl text-gray-600 mb-8">From diplomas to business licenses, CredVerify makes verification effortless.</p>
                 </div>
                 
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -112,7 +112,7 @@
                 </div>
                 <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Admin-Only Onboarding</h2>
                 <p class="text-xl text-indigo-100 mb-8 leading-relaxed">
-                    Credify is available to authorized institutions only. Request access from the Super Admin team to onboard your institution.
+                    CredVerify is available to authorized institutions only. Request access from the Super Admin team to onboard your institution.
                 </p>
                 <div class="space-y-4 sm:space-y-0 sm:space-x-4 sm:flex sm:justify-center">
                     @if (Route::has('login'))
@@ -125,7 +125,7 @@
                             </a>
                         @else
                             <a href="{{ route('login') }}" class="inline-flex items-center px-8 py-4 bg-white text-indigo-900 font-semibold rounded-lg hover:bg-gray-50 transition-colors shadow-lg">
-                                Are You an Admin?
+                                Sign In
                                 <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                                 </svg>
@@ -193,8 +193,8 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid md:grid-cols-4 gap-8">
                     <div class="md:col-span-2">
-                        <h3 class="text-2xl font-bold mb-4">Credify</h3>
-                        <p class="text-gray-300 mb-4">Proof You Can Trust</p>
+                        <h3 class="text-2xl font-bold mb-4">CredVerify</h3>
+                        <p class="text-gray-300 mb-4">Verify Anything. Anywhere. Instantly.</p>
                         <p class="text-gray-400 text-sm">
                             Secure, interoperable, and tamper-proof digital credentials powered by W3C Verifiable Credentials standard.
                         </p>
@@ -203,9 +203,9 @@
                     <div>
                         <h4 class="text-lg font-semibold mb-4">Resources</h4>
                         <ul class="space-y-2 text-gray-300">
-                            <li><a href="#" class="hover:text-white transition-colors">About</a></li>
+                            <li><a href="{{ route('about') }}" class="hover:text-white transition-colors">About</a></li>
                             <li><a href="#" class="hover:text-white transition-colors">Documentation</a></li>
-                            <li><a href="#" class="hover:text-white transition-colors">Verification Tool</a></li>
+                            <li><a href="{{ route('search.index') }}" class="hover:text-white transition-colors">Verification Tool</a></li>
                         </ul>
                     </div>
                     
@@ -221,7 +221,7 @@
                 
                 <div class="border-t border-gray-800 mt-8 pt-8 text-center">
                     <p class="text-gray-400 text-sm">
-                        © {{ date('Y') }} Credify. All rights reserved. • Credify — Proof You Can Trust
+                        © {{ date('Y') }} CredVerify. All rights reserved. • CredVerify — Verify Anything. Anywhere. Instantly.
                     </p>
                 </div>
             </div>

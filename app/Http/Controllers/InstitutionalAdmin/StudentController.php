@@ -70,6 +70,7 @@ class StudentController extends Controller
             'school_id' => $request->school_id,
             'email' => $request->email,
             'password' => Hash::make($temporaryPassword),
+            'temporary_password' => $temporaryPassword,
             'role' => 'student',
             'institution_id' => $user->institution_id,
             'must_change_password' => true,
@@ -163,6 +164,7 @@ class StudentController extends Controller
         
         $student->update([
             'password' => Hash::make($temporaryPassword),
+            'temporary_password' => $temporaryPassword,
             'must_change_password' => true,
         ]);
 

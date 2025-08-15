@@ -73,6 +73,16 @@
                         </div>
                     </div>
 
+                    <!-- Credential Hash -->
+                    <div class="mt-6 bg-gray-50 border border-gray-200 rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-sm font-medium text-gray-800">Credential Hash</h4>
+                            <button onclick="copyCredentialHash('{{ $credential->credential_hash ?: 'N/A' }}')" class="text-xs text-blue-600 hover:text-blue-800">Copy</button>
+                        </div>
+                        <code class="text-xs text-gray-600 break-all">{{ $credential->credential_hash ?: 'Not available' }}</code>
+                        <p class="text-xs text-gray-500 mt-2">Cryptographic hash for credential verification</p>
+                    </div>
+
                     @if($credential->file_path)
                         <div class="mt-6 bg-blue-50 border border-blue-200 rounded-lg p-4">
                             <div class="flex items-center justify-between">
@@ -153,6 +163,15 @@
                         Edit Credential
                     </a>
 
+                    <!-- Download W3C Credential JSON-LD -->
+                    <a href="/credential/{{ $credential->id }}/download/institutional-admin" 
+                       class="w-full inline-flex items-center justify-center px-4 py-2 bg-green-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-green-700 focus:bg-green-700 active:bg-green-800 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition ease-in-out duration-150">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-4-4m4 4l4-4m-6 4H6a2 2 0 01-2-2V6a2 2 0 012-2h6"></path>
+                        </svg>
+                        Download W3C JSON-LD
+                    </a>
+
                     <!-- Download Document -->
                     @if($credential->file_path)
                         <a href="{{ route('institutional-admin.credentials.download', $credential) }}" 
@@ -205,4 +224,22 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function copyCredentialHash(hash) {
+            navigator.clipboard.writeText(hash).then(() => {
+                const button = event.target;
+                const originalText = button.textContent;
+                button.textContent = '✓ Copied!';
+                button.className = 'text-xs text-green-600 hover:text-green-800';
+                
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.className = 'text-xs text-blue-600 hover:text-blue-800';
+                }, 2000);
+            }).catch(() => {
+                alert('Failed to copy hash. Please copy manually.');
+            });
+        }
+    </script>
 </x-institutional-admin-layout>
