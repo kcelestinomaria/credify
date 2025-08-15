@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Credify') }} - Institutional Admin</title>
+    <title>{{ config('app.name', 'CredVerify') }} - Institutional Admin</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -27,9 +27,7 @@
                                 <div class="w-8 h-8 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-lg flex items-center justify-center">
                                     <span class="text-white font-bold text-sm">C</span>
                                 </div>
-                                <span class="text-xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-                                    Credify
-                                </span>
+                                <span class="ml-3 text-xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">CredVerify</span>
                                 <span class="text-sm text-gray-500 font-medium">Admin</span>
                             </a>
                         </div>

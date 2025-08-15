@@ -6,7 +6,7 @@
         <!-- Logo -->
         <div class="flex justify-center mb-6">
             <div class="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-                Credify
+                CredVerify
             </div>
         </div>
 

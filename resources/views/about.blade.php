@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>About - Credify</title>
+    <title>About - CredVerify</title>
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -20,7 +20,7 @@
                                 <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                             </svg>
                         </div>
-                        <span class="ml-3 text-xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">Credify</span>
+                        <span class="ml-3 text-xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">CredVerify</span>
                     </a>
                 </div>
                 <div class="flex items-center space-x-4">
@@ -36,7 +36,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
             <div class="text-center">
                 <h1 class="text-4xl md:text-6xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent mb-6">
-                    About Credify
+                    About CredVerify
                 </h1>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">
                     The next-generation credential management and verification platform built on W3C standards for secure, interoperable, and verifiable digital credentials.
@@ -51,7 +51,7 @@
             <div>
                 <h2 class="text-3xl font-bold text-gray-900 mb-6">Our Mission</h2>
                 <p class="text-lg text-gray-600 mb-6">
-                    Credify revolutionizes how educational institutions issue, manage, and verify digital credentials. We provide a secure, standards-compliant platform that ensures credential authenticity while maintaining privacy and interoperability.
+                    CredVerify revolutionizes how educational institutions issue, manage, and verify digital credentials. We provide a secure, standards-compliant platform that ensures credential authenticity while maintaining privacy and interoperability.
                 </p>
                 <p class="text-lg text-gray-600">
                     Built on W3C Verifiable Credentials Data Model 2.0, our platform enables seamless credential verification across institutions, employers, and verification services worldwide.
@@ -186,7 +186,7 @@
         <div class="text-center">
             <h2 class="text-3xl font-bold text-gray-900 mb-6">Get Started Today</h2>
             <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-                Ready to modernize your credential management? Contact us to learn how Credify can transform your institution's digital credential ecosystem.
+                Ready to modernize your credential management? Contact us to learn how CredVerify can transform your institution's digital credential ecosystem.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="/search" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">
