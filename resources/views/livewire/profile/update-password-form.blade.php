@@ -28,9 +28,15 @@ new class extends Component
             throw $e;
         }
 
-        Auth::user()->update([
+        $user = Auth::user();
+        $user->update([
             'password' => Hash::make($validated['password']),
         ]);
+
+        // Clear temporary password if student changes password
+        if ($user->isStudent() && $user->temporary_password) {
+            $user->clearTemporaryPassword();
+        }
 
         $this->reset('current_password', 'password', 'password_confirmation');
 

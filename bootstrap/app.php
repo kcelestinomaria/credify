@@ -11,8 +11,19 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        //
+        // Register middleware aliases
+        $middleware->alias([
+            'role' => \App\Http\Middleware\CheckRole::class,
+        ]);
+        
+        // Global middleware
+        // $middleware->web(\App\Http\Middleware\SomeGlobalMiddleware::class);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //
-    })->create();
+    })
+    ->withProviders([
+        // Register additional service providers here
+        \App\Providers\SuperAdminServiceProvider::class,
+    ])
+    ->create();

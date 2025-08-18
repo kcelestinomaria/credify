@@ -28,4 +28,18 @@ Route::middleware('auth')->group(function () {
 
     Volt::route('confirm-password', 'pages.auth.confirm-password')
         ->name('password.confirm');
+
+    // Logout route
+    Route::post('/logout', function () {
+        auth()->logout();
+        request()->session()->invalidate();
+        request()->session()->regenerateToken();
+        return redirect('/');
+    })->name('logout');
+
+    // Password change routes
+    Route::get('/change-password', [App\Http\Controllers\Auth\PasswordChangeController::class, 'showChangeForm'])
+        ->name('password.change.form');
+    Route::post('/change-password', [App\Http\Controllers\Auth\PasswordChangeController::class, 'changePassword'])
+        ->name('password.change');
 });
