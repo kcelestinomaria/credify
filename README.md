@@ -43,8 +43,8 @@ CredVerify is a secure, scalable platform for managing and verifying academic cr
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-organization/credverify.git
-cd credverify
+git clone https://github.com/kcelestinomaria/credify.git
+cd credify
 ```
 
 ### 2. Install Dependencies
