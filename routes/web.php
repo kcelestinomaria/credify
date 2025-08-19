@@ -3,6 +3,8 @@
 use App\Http\Controllers\SuperAdminDashboardController;
 use App\Http\Controllers\CredentialController;
 use App\Http\Controllers\CredentialDownloadController;
+use App\Http\Controllers\CredentialPdfController;
+use App\Http\Controllers\ReportController;
 use Illuminate\Support\Facades\Route;
 
 // Public routes
@@ -40,8 +42,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     // Super Admin routes
     Route::prefix('super-admin')->name('super-admin.')->middleware('role:super_admin')->group(function () {
-        Route::get('/dashboard', [SuperAdminDashboardController::class, 'index'])->name('dashboard');
-        // Add more Super Admin routes here
+        require __DIR__.'/super-admin.php';
     });
 
     // Institutional Admin routes
@@ -56,6 +57,11 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/credential/{id}/download/user', [CredentialDownloadController::class, 'downloadForUser'])->name('credential.download.user');
     Route::get('/credential/{id}/download/admin', [CredentialDownloadController::class, 'downloadForAdmin'])->name('credential.download.admin');
     Route::get('/credential/{id}/download/institutional-admin', [CredentialDownloadController::class, 'downloadForInstitutionalAdmin'])->name('credential.download.institutional-admin');
+    
+    // PDF credential download routes
+    Route::get('/credential/{id}/pdf', [CredentialPdfController::class, 'downloadCredential'])->name('credential.pdf');
+    Route::post('/credentials/pdf/multiple', [CredentialPdfController::class, 'downloadMultipleCredentials'])->name('credentials.pdf.multiple');
+    Route::get('/student/{userId?}/portfolio/pdf', [CredentialPdfController::class, 'downloadStudentPortfolio'])->name('student.portfolio.pdf');
 
     // Profile routes (available to all authenticated users)
     Route::view('profile', 'profile')

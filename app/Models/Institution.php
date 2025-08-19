@@ -24,4 +24,12 @@ class Institution extends Model
     {
         return $this->hasMany(User::class);
     }
+
+    /**
+     * Get the credentials issued by this institution.
+     */
+    public function credentials(): HasMany
+    {
+        return $this->hasMany(Credential::class);
+    }
 }

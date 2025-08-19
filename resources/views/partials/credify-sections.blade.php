@@ -212,7 +212,7 @@
                     <div>
                         <h4 class="text-lg font-semibold mb-4">Support</h4>
                         <ul class="space-y-2 text-gray-300">
-                            <li><a href="#" class="hover:text-white transition-colors">Contact</a></li>
+                            <li><a href="mailto:celestine.kariuki@strathmore.edu" class="hover:text-white transition-colors">Contact</a></li>
                             <li><a href="#" class="hover:text-white transition-colors">Help Center</a></li>
                             <li><a href="#" class="hover:text-white transition-colors">Status</a></li>
                         </ul>

@@ -176,35 +176,83 @@
             </div>
         </div>
 
-        <!-- System Overview -->
+        <!-- PDF Reports -->
         <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
-            <div class="px-6 py-4 bg-gradient-to-r from-indigo-50 to-purple-50 border-b border-gray-100">
-                <h3 class="text-lg font-semibold text-gray-900">System Overview</h3>
+            <div class="px-6 py-4 bg-gradient-to-r from-red-50 to-orange-50 border-b border-gray-100">
+                <h3 class="text-lg font-semibold text-gray-900">System Reports</h3>
+                <p class="text-sm text-gray-600 mt-1">Download comprehensive PDF reports for auditing</p>
             </div>
-            <div class="p-6">
-                <div class="space-y-4">
-                    <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                        <span class="text-sm font-medium text-gray-700">Platform Status</span>
-                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
-                            <svg class="w-2 h-2 mr-1" fill="currentColor" viewBox="0 0 8 8">
-                                <circle cx="4" cy="4" r="3"/>
-                            </svg>
-                            Online
-                        </span>
+            <div class="p-6 space-y-4">
+                <a href="{{ route('super-admin.reports.system-audit') }}" 
+                   class="flex items-center p-4 bg-gradient-to-r from-red-50 to-orange-50 rounded-xl hover:from-red-100 hover:to-orange-100 transition-all duration-200 group">
+                    <div class="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 border border-red-100">
+                        <svg class="w-6 h-6 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                        </svg>
                     </div>
-                    <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                        <span class="text-sm font-medium text-gray-700">Security Status</span>
-                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
-                            <svg class="w-2 h-2 mr-1" fill="currentColor" viewBox="0 0 8 8">
-                                <circle cx="4" cy="4" r="3"/>
-                            </svg>
-                            Secure
-                        </span>
+                    <div class="ml-4">
+                        <h4 class="font-semibold text-gray-900">System Audit Report</h4>
+                        <p class="text-sm text-gray-600">Complete system analysis with statistics</p>
                     </div>
-                    <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                        <span class="text-sm font-medium text-gray-700">Last Updated</span>
-                        <span class="text-sm text-gray-600">{{ now()->format('M d, Y') }}</span>
+                </a>
+                
+                <a href="{{ route('super-admin.reports.users') }}" 
+                   class="flex items-center p-4 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl hover:from-blue-100 hover:to-indigo-100 transition-all duration-200 group">
+                    <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 border border-blue-100">
+                        <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                        </svg>
                     </div>
+                    <div class="ml-4">
+                        <h4 class="font-semibold text-gray-900">Users Report</h4>
+                        <p class="text-sm text-gray-600">Complete user directory and statistics</p>
+                    </div>
+                </a>
+                
+                <a href="{{ route('super-admin.reports.credentials') }}" 
+                   class="flex items-center p-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl hover:from-green-100 hover:to-emerald-100 transition-all duration-200 group">
+                    <div class="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 border border-green-100">
+                        <svg class="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div class="ml-4">
+                        <h4 class="font-semibold text-gray-900">Credentials Report</h4>
+                        <p class="text-sm text-gray-600">All issued credentials with analytics</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- System Overview -->
+    <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden mb-8">
+        <div class="px-6 py-4 bg-gradient-to-r from-indigo-50 to-purple-50 border-b border-gray-100">
+            <h3 class="text-lg font-semibold text-gray-900">System Overview</h3>
+        </div>
+        <div class="p-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                    <span class="text-sm font-medium text-gray-700">Platform Status</span>
+                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                        <svg class="w-2 h-2 mr-1" fill="currentColor" viewBox="0 0 8 8">
+                            <circle cx="4" cy="4" r="3"/>
+                        </svg>
+                        Online
+                    </span>
+                </div>
+                <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                    <span class="text-sm font-medium text-gray-700">Security Status</span>
+                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                        <svg class="w-2 h-2 mr-1" fill="currentColor" viewBox="0 0 8 8">
+                            <circle cx="4" cy="4" r="3"/>
+                        </svg>
+                        Secure
+                    </span>
+                </div>
+                <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                    <span class="text-sm font-medium text-gray-700">Last Updated</span>
+                    <span class="text-sm text-gray-600">{{ now()->format('M d, Y') }}</span>
                 </div>
             </div>
         </div>

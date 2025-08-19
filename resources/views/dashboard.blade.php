@@ -76,6 +76,25 @@
                 </div>
             </div>
 
+            <!-- Portfolio Download Section -->
+            @if(auth()->user()->credentials()->count() > 0)
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-8">
+                    <div class="p-6 border-b border-gray-200">
+                        <h3 class="text-lg font-semibold text-gray-900">Portfolio Downloads</h3>
+                        <p class="text-sm text-gray-600 mt-1">Download your complete credentials portfolio</p>
+                    </div>
+                    <div class="p-6">
+                        <x-pdf-download-button 
+                            :url="route('student.portfolio.pdf')"
+                            title="Download Portfolio PDF"
+                            description="Complete portfolio with all your credentials"
+                            icon="document"
+                            color="purple"
+                        />
+                    </div>
+                </div>
+            @endif
+
             <!-- Credentials Grid -->
             @if(auth()->user()->credentials()->count() > 0)
                 <div class="bg-white rounded-xl shadow-lg overflow-hidden">
@@ -128,6 +147,9 @@
                                     <button class="flex-1 bg-gray-600 hover:bg-gray-700 text-white text-xs font-medium py-2 px-3 rounded-lg transition-colors" onclick="event.stopPropagation(); generateQR('{{ $credential->id }}')">
                                         QR Code
                                     </button>
+                                    <a href="{{ route('credential.pdf', $credential->id) }}" class="flex-1 bg-green-600 hover:bg-green-700 text-white text-xs font-medium py-2 px-3 rounded-lg transition-colors text-center" onclick="event.stopPropagation()">
+                                        PDF
+                                    </a>
                                 </div>
                             </div>
                         @endforeach
@@ -377,12 +399,20 @@
                                     </div>
                                     <code class="text-xs text-gray-600 break-all">${data.credential_hash || 'Not available'}</code>
                                 </div>
-                                <a href="/credential/${credentialId}/download/user" class="block w-full bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded-lg transition-colors text-center">
-                                    <svg class="w-4 h-4 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-4-4m4 4l4-4m-6 4H6a2 2 0 01-2-2V6a2 2 0 012-2h6"></path>
-                                    </svg>
-                                    Download W3C Credential JSON-LD
-                                </a>
+                                <div class="flex space-x-2">
+                                    <a href="/credential/${credentialId}/download/user" class="flex-1 bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded-lg transition-colors text-center">
+                                        <svg class="w-4 h-4 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-4-4m4 4l4-4m-6 4H6a2 2 0 01-2-2V6a2 2 0 012-2h6"></path>
+                                        </svg>
+                                        JSON-LD
+                                    </a>
+                                    <a href="/credential/${credentialId}/pdf" class="flex-1 bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 rounded-lg transition-colors text-center">
+                                        <svg class="w-4 h-4 inline mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                                        </svg>
+                                        PDF
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     `;
