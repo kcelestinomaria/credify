@@ -38,7 +38,7 @@ class PasswordChangeController extends Controller
         // Redirect based on user role
         $redirectRoute = match ($user->role) {
             'super_admin' => 'super-admin.dashboard',
-            'institution_admin' => 'institution-admin.dashboard',
+            'institutional_admin' => 'institution-admin.dashboard',
             'student' => 'student.dashboard',
             default => 'dashboard',
         };

@@ -19,7 +19,7 @@ class SuperAdminDashboardController extends Controller
     {
         // Get counts for dashboard cards
         $institutionsCount = Institution::count();
-        $institutionalAdminsCount = User::where('role', 'institution_admin')->count();
+        $institutionalAdminsCount = User::where('role', 'institutional_admin')->count();
         $credentialsCount = Credential::count();
 
         return view('super-admin.dashboard', [

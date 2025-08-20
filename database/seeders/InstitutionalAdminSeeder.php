@@ -29,7 +29,7 @@ class InstitutionalAdminSeeder extends Seeder
                 'last_name' => $institution->name,
                 'email' => 'admin@' . strtolower(str_replace(' ', '', $institution->name)) . '.edu',
                 'password' => Hash::make('password123'),
-                'role' => 'institution_admin',
+                'role' => 'institutional_admin',
                 'institution_id' => $institution->id,
                 'must_change_password' => true,
             ]);
@@ -63,7 +63,7 @@ class InstitutionalAdminSeeder extends Seeder
                 'last_name' => $admin['last_name'],
                 'email' => $admin['email'],
                 'password' => Hash::make('password123'),
-                'role' => 'institution_admin',
+                'role' => 'institutional_admin',
                 'institution_id' => $admin['institution_id'],
                 'must_change_password' => false, // Some have already changed passwords
             ]);

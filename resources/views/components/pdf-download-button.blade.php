@@ -37,8 +37,8 @@ $icons = [
 
 <a href="{{ $url }}" 
    class="flex items-center {{ $sizeClasses[$size] }} bg-gradient-to-r {{ $colorClasses[$color] }} rounded-xl transition-all duration-200 group border">
-    <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform duration-300 border {{ str_replace('text-', 'border-', explode(' ', $colorClasses[$color])[6]) }}">
-        <svg class="{{ $iconSizes[$size] }} {{ explode(' ', $colorClasses[$color])[6] }}" fill="currentColor" viewBox="0 0 20 20">
+    <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform duration-300 border {{ str_replace('text-', 'border-', last(explode(' ', $colorClasses[$color]))) }}">
+        <svg class="{{ $iconSizes[$size] }} {{ last(explode(' ', $colorClasses[$color])) }}" fill="currentColor" viewBox="0 0 20 20">
             <path fill-rule="evenodd" d="{{ $icons[$icon] }}" clip-rule="evenodd"/>
         </svg>
     </div>

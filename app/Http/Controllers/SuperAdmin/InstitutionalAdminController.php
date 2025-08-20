@@ -30,7 +30,7 @@ class InstitutionalAdminController extends Controller
     public function index(): View
     {
         $institutionalAdmins = User::with('institution')
-            ->where('role', 'institution_admin')
+            ->where('role', 'institutional_admin')
             ->latest()
             ->paginate(10);
             
@@ -61,7 +61,7 @@ class InstitutionalAdminController extends Controller
             'last_name' => $validated['last_name'],
             'email' => $validated['email'],
             'password' => Hash::make($temporaryPassword),
-            'role' => 'institution_admin',
+            'role' => 'institutional_admin',
             'institution_id' => $validated['institution_id'],
             'must_change_password' => true, // We'll add this field to the migration
         ]);
@@ -80,7 +80,7 @@ class InstitutionalAdminController extends Controller
     public function show(User $institutionalAdmin): View
     {
         // Ensure the user is an institutional admin
-        if ($institutionalAdmin->role !== 'institution_admin') {
+        if ($institutionalAdmin->role !== 'institutional_admin') {
             abort(404);
         }
         
@@ -94,7 +94,7 @@ class InstitutionalAdminController extends Controller
     public function edit(User $institutionalAdmin): View
     {
         // Ensure the user is an institutional admin
-        if ($institutionalAdmin->role !== 'institution_admin') {
+        if ($institutionalAdmin->role !== 'institutional_admin') {
             abort(404);
         }
         
@@ -108,7 +108,7 @@ class InstitutionalAdminController extends Controller
     public function update(UpdateInstitutionalAdminRequest $request, User $institutionalAdmin): RedirectResponse
     {
         // Ensure the user is an institutional admin
-        if ($institutionalAdmin->role !== 'institution_admin') {
+        if ($institutionalAdmin->role !== 'institutional_admin') {
             abort(404);
         }
         
@@ -131,7 +131,7 @@ class InstitutionalAdminController extends Controller
     public function destroy(User $institutionalAdmin): RedirectResponse
     {
         // Ensure the user is an institutional admin
-        if ($institutionalAdmin->role !== 'institution_admin') {
+        if ($institutionalAdmin->role !== 'institutional_admin') {
             abort(404);
         }
         
@@ -147,7 +147,7 @@ class InstitutionalAdminController extends Controller
     public function resetPassword(User $institutionalAdmin): RedirectResponse
     {
         // Ensure the user is an institutional admin
-        if ($institutionalAdmin->role !== 'institution_admin') {
+        if ($institutionalAdmin->role !== 'institutional_admin') {
             abort(404);
         }
         

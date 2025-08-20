@@ -59,6 +59,9 @@
                                 Verification Code
                             </th>
                             <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                Credential Hash
+                            </th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                 Issued Date
                             </th>
                             <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -103,6 +106,15 @@
                                     <div class="text-sm font-mono text-gray-900">
                                         {{ $credential->verification_code }}
                                     </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-xs font-mono text-gray-600 bg-gray-100 px-2 py-1 rounded">
+                                        {{ substr($credential->credential_hash, 0, 16) }}...
+                                    </div>
+                                    <button onclick="navigator.clipboard.writeText('{{ $credential->credential_hash }}')" 
+                                            class="text-indigo-600 hover:text-indigo-900 text-xs mt-1">
+                                        Copy
+                                    </button>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                                     {{ $credential->created_at->format('M j, Y') }}
